@@ -1,1 +1,4 @@
 chatapp_backend/target
+chatapp_frontend/node_modules
+chatapp_backend/.env
+chatapp_backend/target

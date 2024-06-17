@@ -1,7 +1,7 @@
 use axum::{Json, response::IntoResponse};
 
 pub mod router;
-
+pub mod config;
 pub async fn health_checker_handler() -> impl IntoResponse {
     const MESSAGE: &str = "Working fine, thanks!";
 
