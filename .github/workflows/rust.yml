@@ -38,13 +38,6 @@ jobs:
         override: true
     - name: Set up database URL
       run: echo "DATABASE_URL=postgres://user:password@localhost/dbname" >> $GITHUB_ENV
-    
-      working-directory: ./chatapp_backend
-    - name: Build
-      run: cargo build --verbose
-      working-directory: ./chatapp_backend
-    - name: Run tests
-      run: cargo test --verbose
       working-directory: ./chatapp_backend
     - name: Install sqlx-cli
       run: cargo install sqlx-cli
@@ -53,3 +46,9 @@ jobs:
       working-directory: ./chatapp_backend
     - name: Run migrations
       run: cargo sqlx migrate run
+    - name: Build
+      run: cargo build --verbose
+      working-directory: ./chatapp_backend
+    - name: Run tests
+      run: cargo test --verbose
+      working-directory: ./chatapp_backend
