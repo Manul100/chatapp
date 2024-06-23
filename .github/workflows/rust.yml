@@ -41,14 +41,16 @@ jobs:
       working-directory: ./chatapp_backend
     - name: Install sqlx-cli
       run: cargo install sqlx-cli
-    - name: Prepare SQLx
-      run: cargo sqlx prepare -- --check
       working-directory: ./chatapp_backend
     - name: Run migrations
       run: cargo sqlx migrate run
+      working-directory: ./chatapp_backend
     - name: Build
       run: cargo build --verbose
       working-directory: ./chatapp_backend
     - name: Run tests
       run: cargo test --verbose
+      working-directory: ./chatapp_backend
+    - name: Prepare SQLx
+      run: cargo sqlx prepare
       working-directory: ./chatapp_backend
